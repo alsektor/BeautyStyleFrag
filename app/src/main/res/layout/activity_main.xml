@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.al_vasiti.ali.beautystyle.MainActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="@color/colorBackground"
+        android:contentDescription="@string/logo"
+        android:src="@mipmap/style_logo"
+        android:id="@+id/pic_glavn"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_column="1"
+        android:layout_gravity="fill_vertical"
+        android:layout_row="0"
+        android:background="@color/colorBackground"
+        android:gravity="center_vertical"
+        android:text="@string/name_salon"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorNameSalon"
+        android:id="@+id/text_glavn"/>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:contentDescription="@string/s_hair"
+        android:src="@drawable/hair"
+        android:id="@+id/volosi"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_column="1"
+        android:layout_gravity="center_vertical"
+        android:layout_row="1"
+        android:text="@string/s_hair"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorNameSalon"
+        android:id="@+id/Volosi"/>
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:id="@+id/im_nail"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:contentDescription="@string/s_nails"
+        android:src="@drawable/nail"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tv_nail"
+        android:layout_column="1"
+        android:layout_gravity="center_vertical"
+        android:layout_row="2"
+        android:text="@string/s_nails"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorNameSalon" />
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:contentDescription="@string/address"
+        android:src="@drawable/address"
+        android:id="@+id/adress"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:text="@string/address"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/colorNameSalon"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/address"/>
+    </GridLayout>
+
+</ScrollView>
