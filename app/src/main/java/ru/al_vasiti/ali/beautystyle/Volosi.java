@@ -1,49 +1,84 @@
 package ru.al_vasiti.ali.beautystyle;
 
+/**
+ * Created by РС on 11.09.2017.
+ */
+
+import android.content.Context;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-/**
- * Created by РС on 09.09.2017.
- */
-
 public class Volosi extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    public Note note;
+    public ru.al_vasiti.ali.beautystyle.Volosi.NoteAdapter adapter;
 
-    private int Content;
-    private String url;
-
-    private List<Note> notes;
-
-    public List<Note> getNotes() {
-        return notes;
-    }
-    public Note(){
-        InitList();
-    }
-    public Note (int Content,String url){
-
-        this.Content=Content;
-        this.url=url;
-    }
-    private void initList(){
-        for (int i=0;i<5;i++){
-            Note note0=new Note(R.string.note0,"https://yandex.ru/images/search?text=%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D0%B8%20%D0%B8%20%D0%BF%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BB%D0%B8%D1%86%D0%B0&img_url=http%3A%2F%2Frose-club.ru%2Ffoto4.png%3Fi%3D52035%26k%3Dlyudi-s-kruglim-licom-foto&pos=2&rpt=simage");
-            Note note1=new Note(R.string.note1,"https://yandex.ru/images/search?text=%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D0%B8%20%D0%B8%20%D0%BF%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BB%D0%B8%D1%86%D0%B0&img_url=http%3A%2F%2Frose-club.ru%2Ffoto4.png%3Fi%3D52035%26k%3Dlyudi-s-kruglim-licom-foto&pos=2&rpt=simage");
-            Note note2=new Note(R.string.note2,"https://yandex.ru/images/search?text=%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D0%B8%20%D0%B8%20%D0%BF%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BB%D0%B8%D1%86%D0%B0&img_url=http%3A%2F%2Frose-club.ru%2Ffoto4.png%3Fi%3D52035%26k%3Dlyudi-s-kruglim-licom-foto&pos=2&rpt=simage");
-            Note note3=new Note(R.string.note3,"https://yandex.ru/images/search?text=%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D0%B8%20%D0%B8%20%D0%BF%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BB%D0%B8%D1%86%D0%B0&img_url=http%3A%2F%2Frose-club.ru%2Ffoto4.png%3Fi%3D52035%26k%3Dlyudi-s-kruglim-licom-foto&pos=2&rpt=simage");
-            Note note4=new Note(R.string.note4,"https://yandex.ru/images/search?text=%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D0%B8%20%D0%B8%20%D0%BF%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B3%D0%BE%20%D0%BB%D0%B8%D1%86%D0%B0&img_url=http%3A%2F%2Frose-club.ru%2Ffoto4.png%3Fi%3D52035%26k%3Dlyudi-s-kruglim-licom-foto&pos=2&rpt=simage");
-        notes.add(Note);
-        }
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.volosi);
-        TextView name=(TextView)findViewById(R.id.volosi);
-        name.setText(R.string.volosi);
+        setContentView(R.layout.recycler_view);
+        note = new Note();
+        adapter = new Volosi.NoteAdapter(this, note.getNotes());
+        recyclerView = (RecyclerView) findViewById(R.id.notes_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
     }
+
+    public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
+        private List<Note> notes;
+        private Context context;
+
+    public NoteAdapter(Context context,List<Note>notes){
+        this.notes=notes;
+        this.context = context;
+    }
+
+        @Override
+        public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.list_item_layout, parent, false);
+            return new NoteViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(NoteViewHolder holder, int position) {
+            holder.titleTextView.setText(notes.get(position).getTitle());
+            holder.contentTextView.setText(notes.get(position).getContent());
+
+            Picasso.with(context)
+                    .load(notes.get(position).getUrl())
+                    .into(holder.imageView);
+        }
+
+        @Override
+        public int getItemCount() {
+            return notes.size();
+        }
+
+        public class NoteViewHolder extends RecyclerView.ViewHolder {
+            ImageView imageView;
+            TextView titleTextView;
+            TextView contentTextView;
+
+            public NoteViewHolder(View itemView) {
+                super(itemView);
+                imageView = itemView.findViewById(R.id.image_view);
+                titleTextView = itemView.findViewById(R.id.title_text_view);
+                contentTextView = itemView.findViewById(R.id.content_text_view);
+
+            }
+        }
+    }
+
 }

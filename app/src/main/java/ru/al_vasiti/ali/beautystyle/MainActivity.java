@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private ImageView naillv;
     private TextView nailTv;
     private ImageView picGlavn;
@@ -16,6 +17,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView Volosi;
     private ImageView adress;
     private TextView address;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         address=(TextView)findViewById(R.id.address);
         adress.setOnClickListener(this);
         address.setOnClickListener(this);
+
+
     }
     @Override
     public void onClick(View view){
