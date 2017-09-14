@@ -5,7 +5,9 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static android.R.id.content;
@@ -15,14 +17,19 @@ import static android.R.id.content;
  */
 
 public class Note {
-
-
+   // Time time=new Time();
+    Date date=new Date();
     private String title;
     private String content;
     private String url;
 
     private List<Note> notes = new ArrayList<>();
 
+    public Date getDate(){
+        return date;
+    }
+
+  // public Date();
     public List<Note> getNotes() {
         return notes;
     }
@@ -30,6 +37,7 @@ public class Note {
     public String getContent() {
         return content;
     }
+
     public String getTitle() {
         return title;
     }
@@ -42,19 +50,20 @@ public class Note {
         InitList();
     }
 
-    public Note (String title,String content, String url) {
+    public Note (String title,Date date, String url) {
         this.title = title;
-        this.content = content;
+        this.date=date;
+       // this.content = content;
         this.url = url;
     }
 
     private void InitList() {
         for (int i = 0; i < 5; i++) {
-            Note note0 = new Note("Стрижки и причёски", "страница в разработке", "https://www.look.com.ua/download.php?file=201708/240x320/look.com.ua-236617.jpg");
-            Note note1 = new Note("Окрашивание волос","страница в разработке" , "https://www.look.com.ua/download.php?file=201708/1920x1080/look.com.ua-236617.jpg");
-            Note note2 = new Note("Лечение волос и кожи головы","страница в разработке" , "https://www.look.com.ua/download.php?file=201708/1920x1080/look.com.ua-236617.jpg");
-            Note note3 = new Note("Выпрямление волос","страница в разработке" , "https://www.look.com.ua/download.php?file=201708/1920x1080/look.com.ua-236617.jpg");
-            Note note4 = new Note("Ламинирование волос","страница в разработке" , "https://www.look.com.ua/download.php?file=201708/1920x1080/look.com.ua-236617.jpg");
+            Note note0 = new Note("Стрижки и причёски", date, "https://www.look.com.ua/download.php?file=201708/240x320/look.com.ua-236617.jpg");
+            Note note1 = new Note("Окрашивание волос",date , "https://s1.1zoom.ru/big0/637/Hair_Blonde_girl_White_background_Beautiful_530576_1280x853.jpg");
+            Note note2 = new Note("Лечение волос",date , "https://s1.1zoom.ru/big0/676/Model_Beautiful_Hair_Brown_haired_Gray_background_530585_1280x853.jpg");
+            Note note3 = new Note("Выпрямление волос",date , "https://s1.1zoom.ru/big0/82/Blonde_girl_Hair_Smile_Beautiful_White_background_530531_1280x853.jpg");
+            Note note4 = new Note("Ламинирование волос",date , "https://s1.1zoom.ru/big0/101/Makeup_Face_Manicure_Earrings_Hair_529751_1280x853.jpg");
             notes.add(note0);
             notes.add(note1);
             notes.add(note2);

@@ -17,12 +17,14 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.Date;
 import java.util.List;
 
 public class Volosi extends AppCompatActivity {
     private RecyclerView recyclerView;
     public Note note;
     public ru.al_vasiti.ali.beautystyle.Volosi.NoteAdapter adapter;
+    Date date=new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class Volosi extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.notes_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
     }
 
     public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
@@ -54,7 +57,7 @@ public class Volosi extends AppCompatActivity {
         @Override
         public void onBindViewHolder(NoteViewHolder holder, int position) {
             holder.titleTextView.setText(notes.get(position).getTitle());
-            holder.contentTextView.setText(notes.get(position).getContent());
+            holder.contentTextView.setText(notes.get(position).date.toString());
 
             Picasso.with(context)
                     .load(notes.get(position).getUrl())
