@@ -1,4 +1,4 @@
-package ru.al_vasiti.ali.beautystyle;
+package ru.al_vasiti.ali.beautystylefrag;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import ru.al_vasiti.ali.beautystyle.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view){
         if (view.equals(nailTv)||view.equals(naillv)){
-        Intent intent=new Intent(this,NailCategoryActivity.class);
+        Intent intent=new Intent(this,MainActivity_nail.class);
             startActivity(intent);
         }
         if (view.equals(picGlavn)||view.equals(textGlavn)){

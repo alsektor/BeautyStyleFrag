@@ -10,18 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="ru.al_vasiti.ali.beautystylefrag.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NailCategoryActivity"></activity>
-        <activity android:name=".NailActivity"></activity>
-        <activity android:name=".SalonKrasoti"></activity>
-        <activity android:name=".Volosi"></activity>
-        <activity android:name=".Address"></activity>
+        <activity android:name="ru.al_vasiti.ali.beautystylefrag.MainActivity_nail"></activity>
+        <activity android:name="ru.al_vasiti.ali.beautystylefrag.NailActivity"></activity>
+        <activity android:name="ru.al_vasiti.ali.beautystylefrag.SalonKrasoti"></activity>
+        <activity android:name="ru.al_vasiti.ali.beautystylefrag.Volosi"></activity>
+        <activity android:name="ru.al_vasiti.ali.beautystylefrag.Address"></activity>
     </application>
 
 </manifest>

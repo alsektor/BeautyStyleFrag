@@ -1,16 +1,8 @@
-package ru.al_vasiti.ali.beautystyle;
+package ru.al_vasiti.ali.beautystylefrag;
 
-import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
-
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static android.R.id.content;
 
 /**
  * Created by РС on 09.09.2017.

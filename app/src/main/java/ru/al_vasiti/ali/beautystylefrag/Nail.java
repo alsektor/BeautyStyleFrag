@@ -1,5 +1,7 @@
-package ru.al_vasiti.ali.beautystyle;
+package ru.al_vasiti.ali.beautystylefrag;
 
+
+import ru.al_vasiti.ali.beautystyle.R;
 
 /**
  * Created by РС on 07.09.2017.

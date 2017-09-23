@@ -1,4 +1,4 @@
-package ru.al_vasiti.ali.beautystyle;
+package ru.al_vasiti.ali.beautystylefrag;
 
 /**
  * Created by РС on 11.09.2017.
@@ -20,10 +20,12 @@ import com.squareup.picasso.Picasso;
 import java.util.Date;
 import java.util.List;
 
+import ru.al_vasiti.ali.beautystyle.R;
+
 public class Volosi extends AppCompatActivity {
     private RecyclerView recyclerView;
     public Note note;
-    public ru.al_vasiti.ali.beautystyle.Volosi.NoteAdapter adapter;
+    public Volosi.NoteAdapter adapter;
     Date date=new Date();
 
     @Override

@@ -1,4 +1,6 @@
-package ru.al_vasiti.ali.beautystyle;
+
+
+package ru.al_vasiti.ali.beautystylefrag;
 
 import android.app.ListActivity;
 import android.content.Intent;
