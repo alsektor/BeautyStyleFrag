@@ -18,7 +18,7 @@ public class Nail {
     private int imageResourceld;
     public String test;
 
-    public static List<Nail> nails = new ArrayList<>();
+    public List<Nail> nails = new ArrayList<>();
 
     public List<Nail> getNails() {
         return nails;

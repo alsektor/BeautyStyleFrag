@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import ru.al_vasiti.ali.beautystyle.R;
 
-import static ru.al_vasiti.ali.beautystylefrag.Nail.nails;
+
 
 
 /**
