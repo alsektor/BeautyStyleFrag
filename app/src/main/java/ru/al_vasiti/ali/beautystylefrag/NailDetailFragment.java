@@ -10,10 +10,14 @@ import android.widget.TextView;
 
 import ru.al_vasiti.ali.beautystyle.R;
 
+import static ru.al_vasiti.ali.beautystylefrag.Nail.nails;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
+
+/*
 public class NailDetailFragment extends Fragment {
     private long nailId;
 
@@ -38,8 +42,12 @@ public class NailDetailFragment extends Fragment {
         View view = getView();
         if (view != null) {
             TextView title = (TextView) view.findViewById(R.id.textTitle);
-            Nail nail = Nail.nails[(int) nailId];
+            Nail nail = Nail.nails.get(nailId);
+          //  Nail nail = Nail.nails[(int) nailId];
+         //   Nail nail = Nail.nails[(int) nailId];
             title.setText(nail.getDescription());
+            TextView description=(TextView)view.findViewById(R.id.textDescription);
+            description.setText(nail.getDescription());
             ImageView imageResourceId = (ImageView) view.findViewById(R.id.image_nail);
             imageResourceId.setImageResource(nail.getImageResourceld());
         }
@@ -53,3 +61,4 @@ public class NailDetailFragment extends Fragment {
     }
 
 }
+*/

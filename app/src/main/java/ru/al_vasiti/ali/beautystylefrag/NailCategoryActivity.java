@@ -12,7 +12,7 @@ import android.widget.ListView;
 /**
  * Created by РС on 08.09.2017.
  */
-
+/*
 public class NailCategoryActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -31,3 +31,4 @@ public class NailCategoryActivity extends ListActivity {
         startActivity(intent);
     }
 }
+*/

@@ -26,7 +26,7 @@ public class Volosi extends AppCompatActivity {
     private RecyclerView recyclerView;
     public Note note;
     public Volosi.NoteAdapter adapter;
-    Date date=new Date();
+    Date date = new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +44,10 @@ public class Volosi extends AppCompatActivity {
         private List<Note> notes;
         private Context context;
 
-    public NoteAdapter(Context context,List<Note>notes){
-        this.notes=notes;
-        this.context = context;
-    }
+        public NoteAdapter(Context context, List<Note> notes) {
+            this.notes = notes;
+            this.context = context;
+        }
 
         @Override
         public NoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

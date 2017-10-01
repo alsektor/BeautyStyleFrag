@@ -10,7 +10,7 @@ import ru.al_vasiti.ali.beautystyle.R;
 /**
  * Created by РС on 09.09.2017.
  */
-
+/*
 public class NailActivity extends AppCompatActivity {
     public static final String EXTRA_NAILNOM="nailNom";
     @Override
@@ -33,3 +33,4 @@ public class NailActivity extends AppCompatActivity {
 
     }
 }
+*/

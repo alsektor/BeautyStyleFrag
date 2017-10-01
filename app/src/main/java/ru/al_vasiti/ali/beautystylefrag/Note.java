@@ -45,7 +45,7 @@ public class Note {
     public Note (String title,Date date, String url) {
         this.title = title;
         this.date=date;
-       // this.content = content;
+        // this.content = content;
         this.url = url;
     }
 

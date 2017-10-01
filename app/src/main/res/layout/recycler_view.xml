@@ -8,4 +8,6 @@
     android:layout_height="wrap_content"
     tools:context="ru.al_vasiti.ali.beautystylefrag.MainActivity">
 
+
+
 </android.support.v7.widget.RecyclerView>
