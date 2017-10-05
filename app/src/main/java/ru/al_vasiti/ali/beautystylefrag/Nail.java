@@ -13,7 +13,7 @@ import ru.al_vasiti.ali.beautystyle.R;
 
 public class Nail {
 
-    private String name;
+    public String name;
     private String description;
     private int imageResourceld;
     public String test;
