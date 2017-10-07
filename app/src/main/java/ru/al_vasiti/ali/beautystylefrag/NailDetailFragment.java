@@ -48,7 +48,7 @@ public class NailDetailFragment extends Fragment {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             StopwatchFragment stopwatchFragment = new StopwatchFragment();
             ft.replace(R.id.stopwatch_container, stopwatchFragment);
-           // ft.addToBackStack(null);
+
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         }
