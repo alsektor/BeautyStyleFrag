@@ -1,17 +1,19 @@
 package ru.al_vasiti.ali.beautystylefrag;
 
 import android.app.Activity;
-import android.os.Bundle;
-import android.app.Fragment;
 
+import android.os.Bundle;
+
+//import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.support.v4.app.FragmentTransaction;
-
+import android.app.FragmentTransaction;
+//import android.support.v4.app.FragmentTransaction;
 import layout.StopwatchFragment;
 import ru.al_vasiti.ali.beautystyle.R;
 
@@ -43,10 +45,10 @@ public class NailDetailFragment extends Fragment {
         if(savedInstanceState!=null){
             nailId=savedInstanceState.getLong("nailid");
         }else {
-            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
             StopwatchFragment stopwatchFragment = new StopwatchFragment();
             ft.replace(R.id.stopwatch_container, stopwatchFragment);
-            ft.addToBackStack(null);
+           // ft.addToBackStack(null);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
         }
