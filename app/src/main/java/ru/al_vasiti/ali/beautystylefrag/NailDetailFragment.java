@@ -3,7 +3,7 @@ package ru.al_vasiti.ali.beautystylefrag;
 import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v4.app.ListFragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v4.app.FragmentTransaction;
 
+import layout.StopwatchFragment;
 import ru.al_vasiti.ali.beautystyle.R;
 
 import static android.R.attr.id;
@@ -39,6 +40,16 @@ public class NailDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if(savedInstanceState!=null){
+            nailId=savedInstanceState.getLong("nailid");
+        }else {
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            StopwatchFragment stopwatchFragment = new StopwatchFragment();
+            ft.replace(R.id.stopwatch_container, stopwatchFragment);
+            ft.addToBackStack(null);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
         // Inflate the layout for this fragment
         //  if(savedInstanceState!=null){
         //    nailId=savedInstanceState.getLong("nailid");

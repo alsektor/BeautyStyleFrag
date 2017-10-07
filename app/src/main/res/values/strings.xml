@@ -60,5 +60,8 @@ rovolos@mail.ru "\n"
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="res">Сброс</string>
+    <string name="str">Старт</string>
+    <string name="stp">Стоп</string>
 
 </resources>
